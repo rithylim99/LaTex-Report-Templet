@@ -1,0 +1,163 @@
+\documentclass[a4paper,11pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{sectsty}
+\setcounter{secnumdepth}{3}
+\sectionfont{\large}
+\subsectionfont{\large}
+\renewcommand{\thechapter}{\arabic{chapter}}
+\renewcommand{\thesection}{\thechapter.\arabic{section}.}
+\renewcommand{\thesubsection}{\thesection\arabic{subsection}.}
+\renewcommand{\thesubsubsection}{\thesubsection\arabic{subsubsection}.}
+\usepackage{titlesec}
+\titleformat{\chapter}
+{\normalfont\Large\bfseries}{\thechapter}{1em}{}
+\titlespacing*{\chapter}{0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows,positioning}
+\usepackage{geometry}
+\geometry{bottom=2.5cm,top=2.5cm,left=2.5cm,right=2.5cm}
+\usepackage{setspace}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage[export]{adjustbox}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{54, 69, 79}
+
+\lstdefinestyle{mystyle}{
+	backgroundcolor=\color{backcolour},   
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2,
+	frame = single
+}
+
+\lstset{style=mystyle}
+\renewcommand{\contentsname}{\Large{TABLE OF CONTENTS}} % Rename ToC title
+\renewcommand{\listfigurename}{\Large{LIST OF FIGURES}}
+\renewcommand{\listtablename}{\Large{LIST OF TABLES}}
+\setcounter{tocdepth}{3}
+\usepackage[hidelinks]{hyperref}
+
+\usepackage{amsfonts, amsmath, amssymb, amsthm}
+\usepackage{tikz, tcolorbox}
+\usepackage{enumitem}
+\usepackage{tasks}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usepackage{pgf-pie}
+\usepackage[framemethod=TikZ]{mdframed}
+\usepackage{wrapfig}
+\usepackage{subcaption}
+\usepackage{pdfpages}
+\usepackage{etoolbox}
+
+%\usepackage{tocloft}
+%\usepackage[T1]{fontenc}
+%\usepackage{fourier}
+%\usepackage{heuristica}
+\makeatletter
+\pretocmd{\section}{\addtocontents{toc}{\protect\addvspace{5\p@}}}{}{}
+\makeatother
+\usepackage{lipsum} 
+\usepackage{acronym}
+%-----------------------------------
+\begin{document}
+	\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt  
+	\onehalfspacing
+	\captionsetup{labelfont=bf}
+	%\includepdf[scale=1.12]{Cover1}
+\pagenumbering{roman}
+\setcounter{secnumdepth}{-3}% default for "report" is 2
+			%==================================================
+			%		ACKNOWLEDGMENT
+			%==================================================
+\begin{center}
+	{\Large	\textbf{ACKNOWLEDGMENT}}
+\end{center}
+\addcontentsline{toc}{chapter}{\textbf{ACKNOWLEDGMENT}}
+			\setcounter{page}{1}
+			
+			
+		%--------------------------------------	
+			\newpage 
+			%==================================================
+			%		ABSTRACT
+			%==================================================
+\begin{center}
+	{\Large	\textbf{ABSTRACT}}
+\end{center}
+\addcontentsline{toc}{chapter}{\textbf{ABSTRACT}}
+
+		\newpage
+		%==================================================
+		%		ABBREVIATIONS
+		%==================================================
+		\begin{center}
+			{\Large	\textbf{ABBREVIATIONS}}
+		\end{center}
+		\addcontentsline{toc}{chapter}{\textbf{ABBREVIATIONS}}
+		\begin{acronym}
+			\acro{IoT}{Internet of Things} 
+		\end{acronym}
+
+	\newpage
+	\tableofcontents
+	\addcontentsline{toc}{chapter}{\textbf{TABLE OF CONTENT}}
+	\singlespacing
+	\newpage
+	\doublespacing
+	\listoffigures
+	\singlespacing
+	\addcontentsline{toc}{chapter}{\textbf{LIST OF FIGURE}}
+	\newpage
+	\listoftables
+	\singlespacing
+	\addcontentsline{toc}{chapter}{\textbf{LIST OF TABLE}}
+	\newpage
+	%=========================================
+	%=========================================
+	\pagenumbering{arabic}
+	\setcounter{secnumdepth}{3}
+	\onehalfspacing
+	\chapter{INTRODUCTION}
+	\section{Company Background}
+        \section{Study Background}
+	\section{Objective of project}
+        \section{Scope of work}
+        \section{Report Outline}
+	\chapter{LITERATURE REVIEWS}
+	\chapter{AIR QUALITY CONTROLLER PROCEDURE}
+	\section{Design Procedure}
+	\section{Hardware Procedure}
+	\section{Programming Procedure}
+	\chapter{INSTALLATION AND TESTING}
+	\section{Testing}
+	\section{Installation}
+	\chapter{CONCLUSION}
+	\newpage
+	\section*{Reference}
+	\addcontentsline{toc}{section}{\textbf{Reference}}
+	\newpage
+	\begin{center}
+	{\Large    \textbf{APPENDIX}}
+	\end{center}
+	\addcontentsline{toc}{chapter}{\textbf{APPENDIX}}
+	
+\end{document}
